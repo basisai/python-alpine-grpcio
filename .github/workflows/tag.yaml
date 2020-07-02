@@ -14,6 +14,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Create tag
         run: |
           PYTHON_VERSION=$(python --version | cut -d " " -f 2)
           GRPC_VERSION=$(pip show grpcio | grep -i version | cut -d " " -f 2)
