@@ -16,8 +16,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Create tag
         run: |
-          PYTHON_VERSION=$(python --version | cut -d " " -f 2)
-          GRPC_VERSION=$(pip show grpcio | grep -i version | cut -d " " -f 2)
+          PYTHON_VERSION=(python --version | cut -d " " -f 2)
+          GRPC_VERSION=(pip show grpcio | grep -i version | cut -d " " -f 2)
           TAG="${PYTHON_VERSION}-${GRPC_VERSION}"
           git tag "${TAG}"
           git push "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" "refs/tags/${TAG}"
