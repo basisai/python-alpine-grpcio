@@ -19,5 +19,6 @@ jobs:
           PYTHON_VERSION=(python --version | cut -d " " -f 2)
           GRPC_VERSION=(pip show grpcio | grep -i version | cut -d " " -f 2)
           TAG="${PYTHON_VERSION}-${GRPC_VERSION}"
-          git tag "${TAG}"
+          # ignore duplicate tags and skip push
+          git tag "${TAG}" || exit 0
           git push "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" "refs/tags/${TAG}"

@@ -2,9 +2,9 @@ name: Publish docker image on merge to master
 
 on:
   push:
-    # Matching tags: 1.0-0.1.0, 3.8.2-1.30.0, etc.
+    # Matching tags: 3.8.2-1.30.0, etc.
     tags:
-      - "^[0-9]+(.[0-9]+)*-[0-9]+(.[0-9]+)*$"
+      - "[0-9]+.[0-9]+.[0-9]+-[0-9]+.[0-9]+.[0-9]+"
   pull_request:
     types: [opened, ready_for_review, reopened]
     paths-ignore:
