@@ -16,8 +16,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Create tag
         run: |
-          PYTHON_VERSION=(python --version | cut -d " " -f 2)
-          GRPC_VERSION=(pip show grpcio | grep -i version | cut -d " " -f 2)
+          PYTHON_VERSION=$(python --version | cut -d " " -f 2)
+          GRPC_VERSION=$(pip show grpcio | grep -i version | cut -d " " -f 2)
           TAG="${PYTHON_VERSION}-${GRPC_VERSION}"
           # ignore duplicate tags and skip push
           git tag "${TAG}" || exit 0
