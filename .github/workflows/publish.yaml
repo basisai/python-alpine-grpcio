@@ -7,9 +7,9 @@ on:
       - "[0-9]+.[0-9]+.[0-9]+-[0-9]+.[0-9]+.[0-9]+"
   pull_request:
     types: [opened, ready_for_review, reopened]
-    paths-ignore:
-      - README.md
-      - .github/**
+    paths:
+      - Dockerfile
+      - requirements.txt
 
 jobs:
   build:
