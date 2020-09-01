@@ -1,4 +1,4 @@
-FROM python:3.8.3-alpine3.11
+FROM python:3.8.5-alpine3.11
 
 RUN apk add --no-cache \
   # required by grpc
@@ -10,6 +10,6 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt \
   && rm requirements.txt \
   && apk del \
-    g++ \
-    musl-dev \
-    libffi-dev
+  g++ \
+  musl-dev \
+  libffi-dev
