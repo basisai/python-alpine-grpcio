@@ -12,4 +12,4 @@ To create and push a new image version, [create a new release/tag](https://githu
 The image tag will be made up of two components separate by a
 `-`: `<python version>-<grpcio version>`.
 
-A GA workflow will pick this up and push a new version to quay.io.
+A [GA workflow]https://github.com/basisai/python-alpine-grpcio/blob/master/.github/workflows/publish.yaml) will pick this up and push a new version to quay.io.
