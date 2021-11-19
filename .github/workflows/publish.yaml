@@ -6,7 +6,7 @@ on:
       - master
     # Matching tags: 3.8.2-1.30.0, etc.
     tags:
-      - "[0-9]+.[0-9]+.[0-9]+-[0-9]+.[0-9]+.[0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+-[0-9]+.[0-9]+.[0-9]+-[0-9]+.[0-9]+.[0-9]+"
   pull_request:
     types: [opened, ready_for_review, reopened, synchronize]
     paths:
