@@ -7,6 +7,7 @@ RUN apk add --no-cache \
   libffi-dev
 
 COPY requirements.txt ./
+
 RUN pip install --no-cache-dir -r requirements.txt \
   # Clean up
   && rm requirements.txt \
