@@ -16,8 +16,11 @@ on:
 jobs:
   build:
     runs-on: [self-hosted, docker, integration]
+    env:
+      # list of Docker images to use as base name for tags
+      IMAGE_REPO: quay.io/basisai/python-alpine-grpcio
     outputs:
-      image-tags: ${{ steps.docker_meta.outputs.tags }}
+      image-tags: ${{ env.IMAGE_REPO }}:${{ steps.docker_meta.outputs.version }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -25,7 +28,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v3
         with:
-          images: quay.io/basisai/python-alpine-grpcio # list of Docker images to use as base name for tags
+          images: ${{ env.IMAGE_REPO }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
