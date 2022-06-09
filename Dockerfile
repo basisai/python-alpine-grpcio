@@ -1,4 +1,4 @@
-FROM python:3.9.10-alpine3.15
+FROM python:3.10.5-alpine3.15
 
 RUN apk add --no-cache \
   # required by grpc
