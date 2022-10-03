@@ -15,7 +15,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted, docker, integration]
+    runs-on: [self-hosted]
     env:
       # list of Docker images to use as base name for tags
       IMAGE_REPO: quay.io/basisai/python-alpine-grpcio
@@ -86,7 +86,7 @@ jobs:
           retention-days: 1
 
   scan:
-    runs-on: [self-hosted, docker, integration]
+    runs-on: [self-hosted]
     needs: build
     strategy:
       matrix:
